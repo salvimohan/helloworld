@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "main":    "main.js",
   "scripts": {
-  	"start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager . app  --out dist/",
+    "deb64": "electron-installer-debian --src dist/app-linux-ia32/ --dest dist/installers/ --arch i386"
   },
-  "dependencies" : {
-    "electron": "^1.4.0"
+  "devDependencies": {
+    "electron-installer-debian": "*",
+    "electron-packager": "*",
+    "electron": "^1.4.3"
   }
 }
